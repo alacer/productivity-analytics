@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7">
+<![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8">
+<![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js lt-ie9">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+
+<html lang="en" class=""><!--<![endif]--><head>
+    <title>Production Analytics -  Alacer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Open Sans Font CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,800italic,400,600,800" type="text/css">
+    <!-- Bootstrap/Other Core CSS -->
+    <link rel="stylesheet" href="../WebsiteResources/Styles/Vendor/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../WebsiteResources/Styles/Vendor/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../WebsiteResources/Styles/Vendor/ui-lightness/jquery-ui-1.9.2.custom.css" type="text/css">
+    <!-- Script-Specific CSS -->
+    <link rel="stylesheet" href="../WebsiteResources/Scripts/Plugins/icheck/skins/minimal/blue.css" type="text/css">
+    <link rel="stylesheet" href="../WebsiteResources/Scripts/Plugins/select2/select2.css" type="text/css">
+    <link rel="stylesheet" href="../WebsiteResources/Scripts/Plugins/fullcalendar/fullcalendar.css" type="text/css">
+    <link rel="stylesheet" href="../WebsiteResources/Scripts/Plugins/magnific/magnific-popup.css" type="text/css">
+    <!-- Customized Theme CSS -->
+    <link rel="stylesheet" href="../WebsiteResources/Styles/App.css" type="text/css">
+    <link rel="stylesheet" href="../WebsiteResources/Styles/App.Overrides.css" type="text/css">
+    <link rel="stylesheet" href="../WebsiteResources/Scripts/Plugins/datepicker/datepicker.css" type="text/css">
+    <link rel="stylesheet" href="../WebsiteResources/Scripts/Plugins/timepicker/bootstrap-timepicker.css" type="text/css">
+    <link rel="stylesheet" href="../WebsiteResources/Scripts/Plugins/fileupload/bootstrap-fileupload.css" type="text/css">
+    <link rel="stylesheet" href="../WebsiteResources/Scripts/Plugins/datatables/extensions/TableTools/css/dataTables.tableTools.css" type="text/css">
+    <!-- jQuery script files need loaded before code-->
+
+    <script src="../WebsiteResources/Scripts/Libraries/jquery-1.9.1.min.js"></script>
+    <script src="../WebsiteResources/Scripts/Libraries/jquery-ui-1.9.2.custom.min.js"></script>
+    <!-- <script src="Scripts/dashboardTable.js"></script> -->
+
+
+  <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style><link type="text/css" rel="stylesheet" href="https://34a7a1f9164c48c1b61f-84378afe43d6d6b04d77869b7b49ff0e.ssl.cf2.rackcdn.com/assets/gui-3da3101bba6472c4d5adf4472bdc3857.css" id="_BH_CSS"></head>
+  <body>
+    <!-- Outer Wrapper -->
+<div id="wrapper"><h1 id="site-logo">
+          <a href="/">
+          <img src="../WebsiteResources/images/logo.png" alt="Alacer">
+          </a>
+        </h1>
+      <header id="header">
+        <!-- Alacer Logo -->
+        
+        <!-- Navbar Toggle - Disabled -->
+        <a href="javascript:;" data-toggle="collapse" data-target=".top-bar-collapse" id="top-bar-toggle" class="navbar-toggle collapsed">
+        <i class="fa fa-cog"></i>
+        </a>
+        <!-- Sidebar Toggle - Disabled -->
+        <a href="javascript:;" data-toggle="collapse" data-target=".sidebar-collapse" id="sidebar-toggle" class="navbar-toggle collapsed">
+        <i class="fa fa-reorder"></i>
+        </a>
+      </header>
+      <!-- /header -->
+      <!-- Top/Navigation Bar -->
+      <nav id="top-bar" class="collapse top-bar-collapse">
+  
+
+        <!-- Current User Display/Links -->
+        <ul class="nav navbar-nav pull-right">
+          <!-- Inbox Preview -->
+          <!-- Authenticated User and User-Specific Links -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+            <i class="fa fa-user"></i>
+            Ed Sarausad
+            <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <!-- Profile Link -->
+            <li>
+                <a href="/settings">
+                <i class="fa fa-gears"></i>
+                &nbsp;&nbsp;Settings
+                </a>
+              </li>
+
+              <!-- Logout -->
+              <li>
+                <a href="/logout">
+                <i class="fa fa-sign-out"></i>
+                &nbsp;&nbsp;Logout
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+     <!-- /#top-bar -->
+      <!-- Contextual Navigation and Sidebar Breadcrumb -->
+      <div id="sidebar-wrapper" class="collapse sidebar-collapse">
+        <!-- Sidebar Breadcrumb -->
+        <div id="SidebarBreadcrumb" style="width: 100%">
+          <h4 style="left: 38px; position: absolute">Production Analytics</h4>
+        </div>
+        <!-- Contextual Navigation -->
+        <nav id="sidebar">
+          <ul id="main-nav" class="open-active">
+            <li>
+              <a>
+              <i class="fa fa-bar-chart-o"></i>
+              Track
+              </a>
+            </li>
+            <li class="dropdown">
+              <a href="javascript:;">
+              <i class="fa fa-users"></i>
+              Trends
+              <span class="caret"></span>
+              </a>
+              <ul class="sub-nav">
+                <li class="active">
+                  <a>
+                    All Investigators
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    Barbara Johnson
+                  </a>
+                </li> 
+                <li>
+                  <a>
+                    Damon Washington
+                  </a>
+                </li>  
+                <li>
+                  <a>
+                    Jonathan Finn
+                  </a>
+                </li> 
+                <li>
+                  <a>
+                    Lauren Connor
+                  </a>
+                </li> 
+                <li>
+                  <a>
+                    Michael Jackson
+                  </a>
+                </li>                                  
+              </ul>
+            </li> 
+            <li>
+              <a>
+              <i class="fa fa-line-chart"></i>
+              Forecast
+              </a>
+            </li>
+            <li>
+              <a>
+              <i class="fa fa-calculator"></i>
+              Calculate
+              </a>
+            </li>
+            <li>
+              <a>
+              <i class="fa fa-pencil-square-o"></i>
+              Enter Data
+              </a>
+            </li>                       
+          </ul>
+        </nav>
+ 
+        <!-- #sidebar -->
+      </div>
+           <!-- /#sidebar-wrapper -->
+      <div id="content">
+
+        <!-- Content Header -->
+        <div id="content-header">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1>Resource Planning</h1>
+          </div>
+
+        </div>
+      </div>
+        <!-- Primary Content Container -->
+        <div id="content-container">
+
+<div class="portlet">
+  <div class="portlet-header">
+  <h3> How many alerts can we process?</h3>
+  </div>
+  <div class="portlet-content">
+  <div class="row">
+        <div class="col-md-6">
+
+          <div class="row">
+        <div class="col-md-3">
+              <div class="form-group">
+
+                <input type="text" id="text-input" class="form-control">
+              </div>
+        </div>
+        <div class="col-md-9">
+              <h4> Investigators </h4>
+        </div>
+        </div>
+<div class="slider-demo slider-primary ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style="margin-top: -40px; margin-bottom: 40px">
+  <div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 75%; position-top:-10px"></div>
+    <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 75%;"></a>
+</div>
+
+          <div class="row">
+        <div class="col-md-3">
+              <div class="form-group">
+
+                <input type="text" id="text-input" class="form-control">
+              </div>
+        </div>
+        <div class="col-md-9">
+              <h4> Minutes per Alert </h4>
+        </div>
+        </div>
+<div class="slider-demo slider-primary ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style="margin-top: -40px; margin-bottom: 40px"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 50%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a></div>
+
+          <div class="row">
+        <div class="col-md-3">
+              <div class="form-group">
+
+                <input type="text" id="text-input" class="form-control">
+              </div>
+        </div>
+        <div class="col-md-9">
+              <h4> Hours Per Day </h4>
+        </div>
+        </div>
+<div class="slider-demo slider-primary ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style="margin-top: -40px; margin-bottom: 40px"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 50%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a></div>
+
+</div>
+
+<div class="col-md-6">
+
+<div class="row">
+
+  <div class="col-md-4">
+    <h1 style="text-align: center"> 87.27 </h1> 
+  </div>
+  <div class="col-md-4" style="text-align:center">
+      <i class="fa fa-exclamation-triangle fa-4x"></i>
+  </div>
+  <div class="col-md-4">
+    <h1 style="text-align: center"> 436.36 </h1> 
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h4 style="text-align: center"> Per Day</h4> 
+  </div>
+  <div class="col-md-4">
+   
+  </div>  
+  <div class="col-md-4">
+    <h4 style="text-align: center"> Per Week </h4> 
+  </div>
+</div>
+
+      
+  </div>
+</div>
+
+</div>
+
+<br><br>
+
+<div class="portlet">
+  <div class="portlet-header">
+  <h3> How many investigators do we need?</h3>
+  </div>
+  <div class="portlet-content">
+        <div class="col-md-6">
+
+
+          <span>Alerts Completed Goal: 1000</span>
+<div class="slider-demo slider-secondary ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 75%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 75%;"></a></div>
+<br>
+          <span>Minutes Per Alert: 55</span>
+<div class="slider-demo slider-secondary ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 50%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a></div>
+<br>
+          <span>Hours Per Day: 8</span>
+<div class="slider-demo slider-secondary ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 50%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a></div>
+<br>
+          <span>Days To Complete Alerts: 5</span>
+<div class="slider-demo slider-secondary ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 20%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 20%;"></a></div>
+
+</div>
+
+<div class="col-md-6">
+  <div class="col-md-6" style="text-align: center">
+    <i class="fa fa-users fa-5x"></i>
+  </div>
+  <div class="col-md-6">
+    <h1> 22.9 </h1>
+    <h4> Investigators </h4>
+  </div>
+
+  <div id="burndown" style="height: 140px">
+
+  </div>
+<script>
+$(function () {
+    $('#burndown').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },        
+        xAxis: {
+            categories: [
+        'Wk 0',
+                'Wk 1',
+                'Wk 2',
+                'Wk 3',
+                'Wk 4',
+                'Wk 5'
+            ],
+        },
+        yAxis: {
+            min: 0,
+            title: {
+              text: "Cases Remaining"
+            }
+        },
+        legend: {
+          enabled: false
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Cases Remaining per Week',
+            data: [1000, 800, 600, 400, 200, 0]
+        }]
+    });
+});
+</script>
+
+
+  </div>
+
+</div>
+
+<!-- Closes content container -->
+
+  </div>
+
+
+
+<div class="portlet">
+  <div class="portlet-header">
+  <h3> How long will it take to process alerts?</h3>
+  </div>
+  <div class="portlet-content">
+        <div class="col-md-6">
+
+
+          <span>Number of Alerts: 1000</span>
+<div class="slider-demo slider-tertiary ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 75%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 75%;"></a></div>
+<br>
+          <span>Minutes Per Alert: 55</span>
+<div class="slider-demo slider-tertiary ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 50%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a></div>
+<br>
+          <span>Hours Per Day: 8</span>
+<div class="slider-demo slider-tertiary ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 50%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a></div>
+<br>
+          <span>Number of Investigators: 5</span>
+<div class="slider-demo slider-tertiary ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 20%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 20%;"></a></div>
+
+</div>
+
+<div class="col-md-6">
+
+  <h4 class="heading">Results</h4>
+<h5> 22.9 Work Days </h5>
+
+  </div>
+
+</div>
+
+<!-- Closes content container -->
+
+  </div>
+
+
+
+
+
+
+      </div>
+    </div>
+    <!-- #wrapper -->
+    <footer id="footer">
+      <ul class="nav pull-right">
+        <li>
+          Copyright © 2015, Alacer Group.
+        </li>
+      </ul>
+    </footer>
+ 
+    <!-- Script Libraries -->
+    <script src="../WebsiteResources/Scripts/Libraries/bootstrap.min.js"></script>
+    <script src="../WebsiteResources/Scripts/Libraries/raphael-2.1.2.min.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/magnific/jquery.magnific-popup.min.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/howl/howl.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/icheck/jquery.icheck.min.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/select2/select2.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/tableCheckable/jquery.tableCheckable.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/datatables/jquery.dataTables.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/datatables/DT_bootstrap.js"></script>
+    <!-- Alacer Main Script -->
+
+    <script src="../WebsiteResources/Scripts/App.Alacer.js"></script>
+ <!--   <script src="Scripts/App.dataentry.js"></script> -->
+
+    <!-- Alacer Extended Common Functions Script -->
+    <script src="../WebsiteResources/Scripts/App.Extensions.js"></script> 
+    <script src="../WebsiteResources/Scripts/Libraries/highstock.js"></script>
+    <script src="../WebsiteResources/Scripts/Libraries/modules/exporting.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/icheck/jquery.icheck.min.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/timepicker/bootstrap-timepicker.js"></script>
+    <script src="../WebsiteResources/Scripts/Plugins/fileupload/bootstrap-fileupload.js"></script>    
+<!-- <script src="Scripts/form-extended.js"></script> -->
+    <script src="../WebsiteResources/Scripts/Plugins/datatables/extensions/TableTools/js/dataTables.tableTools.js"></script>
+    <script src="../WebsiteResources/Scripts/TrendLines.js"></script>     
+<!--    <script src="Scripts/Trends.Charts.js"></script> 
+    <script src="Scripts/dashboardTable.js"></script>  -->
+  
+</body></html>
